@@ -8,8 +8,65 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import Image from "next/image"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import { useState } from "react"
 
 export default function ContactPage() {
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    insuranceType: "",
+    leadVolume: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus("Message sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          insuranceType: "",
+          leadVolume: "",
+          message: "",
+        });
+      } else {
+        setStatus("Failed to send message.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("An error occurred.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <Header />
@@ -55,31 +112,31 @@ export default function ContactPage() {
                   Fill out the form below and one of our lead generation specialists will contact you within 24 hours.
                 </p>
 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
-                      <Input placeholder="Enter your first name" required />
+                      <label className="block mb-1">First Name *</label>
+                      <Input name="firstName" value={formData.firstName} onChange={handleChange} required />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
-                      <Input placeholder="Enter your last name" required />
+                      <label className="block mb-1">Last Name *</label>
+                      <Input name="lastName" value={formData.lastName} onChange={handleChange} required />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
-                    <Input type="email" placeholder="Enter your email address" required />
+                    <label className="block mb-1">Email Address *</label>
+                    <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
-                    <Input type="tel" placeholder="Enter your phone number" required />
+                    <label className="block mb-1">Phone Number *</label>
+                    <Input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Insurance Type</label>
-                    <select className="w-full p-3 border border-slate-300 rounded-md">
+                    <label className="block mb-1">Insurance Type</label>
+                    <select name="insuranceType" value={formData.insuranceType} onChange={handleChange} className="w-full p-3 border rounded">
                       <option value="">Select insurance type</option>
                       <option value="health">Health Insurance</option>
                       <option value="life">Life Insurance</option>
@@ -89,8 +146,8 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Current Monthly Lead Volume</label>
-                    <select className="w-full p-3 border border-slate-300 rounded-md">
+                    <label className="block mb-1">Current Monthly Lead Volume</label>
+                    <select name="leadVolume" value={formData.leadVolume} onChange={handleChange} className="w-full p-3 border rounded">
                       <option value="">Select current volume</option>
                       <option value="0-50">0-50 leads</option>
                       <option value="51-100">51-100 leads</option>
@@ -100,14 +157,20 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Tell us about your business</label>
+                    <label className="block mb-1">Tell us about your business</label>
                     <textarea
-                      className="w-full p-3 border border-slate-300 rounded-md resize-none h-32"
-                      placeholder="Tell us about your current lead generation challenges and goals..."
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full p-3 border rounded resize-none h-32"
                     />
                   </div>
 
-                  <Button className="w-full bg-[#1e7b8c] hover:bg-[#1e7b8c]/90 text-white py-3">Send Message</Button>
+                  <Button type="submit" className="w-full bg-[#1e7b8c] text-white">
+                    {loading ? "Sending..." : "Send Message"}
+                  </Button>
+
+                  {status && <p className="text-sm text-center mt-2">{status}</p>}
                 </form>
               </CardContent>
             </Card>

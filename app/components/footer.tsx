@@ -114,7 +114,11 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-          <p>&copy; 2024 Expert Media. All rights reserved. Transparent • Reliable • Exclusive</p>
+          <p>
+            &copy; 2024 Expert Media. All rights reserved. Transparent • Reliable • Exclusive.
+            Design By <a href="https://imperiumadvertising.com/" target="_blank" rel="noopener noreferrer">Imperium Advertising</a>
+          </p>
+
         </div>
       </div>
     </footer>
