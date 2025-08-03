@@ -99,7 +99,7 @@ export default function HomePage() {
                     <TrendingUp className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900">Live Transfers</div>
+                    <div className="font-semibold text-slate-900">Live Traffic</div>
                     <div className="text-sm text-slate-600">Real-time qualified leads</div>
                   </div>
                 </div>

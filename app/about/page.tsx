@@ -127,51 +127,91 @@ export default function AboutPage() {
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
                 <Image
-                  src="/images/team-leader-male.jpg"
-                  alt="John Smith - CEO"
+                  src="/images/Raphael.jpeg"
+                  alt="Raphael – Director of Business Development"
                   width={150}
                   height={150}
                   className="rounded-full mx-auto mb-6"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">John Smith</h3>
-                <p className="text-[#1e7b8c] font-medium mb-4">CEO & Founder</p>
-                <p className="text-slate-600">
-                  15+ years in insurance marketing with a track record of helping agents achieve 300% growth.
-                </p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Raphael </h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Director of Business Development</p>
+                
               </CardContent>
             </Card>
 
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
                 <Image
-                  src="/images/team-leader-female.jpg"
+                  src="/images/Leonardo.jpeg"
                   alt="Sarah Davis - CTO"
                   width={150}
                   height={150}
                   className="rounded-full mx-auto mb-6"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Sarah Davis</h3>
-                <p className="text-[#1e7b8c] font-medium mb-4">CTO & Co-Founder</p>
-                <p className="text-slate-600">
-                  Technology expert with 12+ years building scalable lead generation platforms.
-                </p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Leonardo Lupe </h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Lead Qualification & Intake Analyst</p>
+                
               </CardContent>
             </Card>
 
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
                 <Image
-                  src="/images/team-leader-sales.jpg"
+                  src="/images/slava.jpeg"
                   alt="Mike Johnson - VP Sales"
                   width={150}
                   height={150}
                   className="rounded-full mx-auto mb-6"
                 />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Mike Johnson</h3>
-                <p className="text-[#1e7b8c] font-medium mb-4">VP of Sales</p>
-                <p className="text-slate-600">
-                  Former insurance agent turned sales leader, understands the challenges agents face daily.
-                </p>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Slava  Morgenstein</h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Director of Partner Relations </p>
+                
+              </CardContent>
+            </Card>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+            <Card className="border-0 shadow-lg text-center">
+              <CardContent className="p-8">
+                <Image
+                  src="/images/team-leader-male.jpg"
+                  alt="Raphael – Director of Business Development"
+                  width={150}
+                  height={150}
+                  className="rounded-full mx-auto mb-6"
+                />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Michael </h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Director of IT & Platform Infrastructure</p>
+                
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg text-center">
+              <CardContent className="p-8">
+                <Image
+                  src="/images/Samantha.jpeg"
+                  alt="Sarah Davis - CTO"
+                  width={150}
+                  height={150}
+                  className="rounded-full mx-auto mb-6"
+                />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Samantha </h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Director of Billing & Client Support</p>
+                
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg text-center">
+              <CardContent className="p-8">
+                <Image
+                  src="/images/Steven.jpeg"
+                  alt="Sarah Davis - CTO"
+                  width={150}
+                  height={150}
+                  className="rounded-full mx-auto mb-6"
+                />
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Steven</h3>
+                <p className="text-[#1e7b8c] font-medium mb-4">Client relation, and on boarding</p>
+                
               </CardContent>
             </Card>
           </div>

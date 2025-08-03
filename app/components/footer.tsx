@@ -11,8 +11,8 @@ export default function Footer() {
             <Image
               src="/images/expert-media-logo.png"
               alt="Expert Media Logo"
-              width={180}
-              height={60}
+              width={200}
+              height={200}
               className="h-12 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-slate-400 mb-4">
