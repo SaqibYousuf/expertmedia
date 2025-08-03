@@ -157,7 +157,7 @@ export default function AboutPage() {
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
                 <Image
-                  src="/images/slava.jpeg"
+                  src="/images/Slava.jpeg"
                   alt="Mike Johnson - VP Sales"
                   width={150}
                   height={150}

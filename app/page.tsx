@@ -336,7 +336,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center">
                   <Image
-                    src="/images/agent-sarah.jpg"
+                    src="/images/agent-lisa.jpg"
                     alt="Sarah Johnson"
                     width={50}
                     height={50}

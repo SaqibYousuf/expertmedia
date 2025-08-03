@@ -359,7 +359,7 @@ export default function ServicesPage() {
                 </ul>
                 <div className="text-center">
                   <Image
-                    src="/images/medicare.jpg"
+                    src="/images/Medicare.jpg"
                     alt="Medicare Coverage"
                     width={300}
                     height={200}
